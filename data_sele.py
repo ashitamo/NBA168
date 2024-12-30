@@ -18,16 +18,16 @@ def fetch_team_data(file_path, team, date, window):
     data = pd.read_csv(file_path)
 
     # Convert 'Date' column to datetime
-    data['Date'] = pd.to_datetime(data['Date'])
+    data['DATE'] = pd.to_datetime(data['DATE'])
 
     # Parse input date to datetime
     target_date = datetime.strptime(date, '%Y-%m-%d')
 
     # Filter rows where the team appears as either Visitor or Home and the game is before the target date
-    filtered_data = data[((data['Visitor_Team'] == team) | (data['Home_Team'] == team)) & (data['Date'] < target_date)]
+    filtered_data = data[((data['VISITOR_TEAM'] == team) | (data['HOME_TEAM'] == team)) & (data['DATE'] < target_date)]
 
     # Sort by Date descending to get the most recent games first
-    filtered_data = filtered_data.sort_values(by='Date', ascending=False)
+    filtered_data = filtered_data.sort_values(by='DATE', ascending=False)
 
     # Return the specified number of rows
     return filtered_data.head(window)

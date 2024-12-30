@@ -2,8 +2,10 @@ import pandas as pd
 from datetime import datetime
 
 # Load the CSV data into a DataFrame
-file_path = r'C:\Users\audi9\Desktop\NBA168-master\NBA_Game_Data.csv'  # Replace with actual path if needed
+file_path = r'C:\Users\audi9\Desktop\NBA168\NBA_Game_Data.csv'  # Replace with actual path if needed
 data = pd.read_csv(file_path)
+
+
 
 # Define team name mapping dictionary
 team_mapping = {
@@ -45,6 +47,7 @@ data = data.drop(columns=['visitor_USG%', 'home_USG%','Start (ET)'])
 
 # Step 4: Add a new column to determine the winning team
 data['Home_Win'] = (data['Home_PTS'] > data['Visitor_PTS']).astype(int)
+data.columns = data.columns.str.upper()
 
 # Save the processed DataFrame to verify results
 processed_file_path = 'processed_data.csv'
