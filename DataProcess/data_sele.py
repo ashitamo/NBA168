@@ -33,7 +33,7 @@ def fetch_team_data(file_path, team, date, window):
     return filtered_data.head(window)
 
 # Example usage
-file_path = r"C:\Users\audi9\Desktop\NBA168\processed_data.csv"
+file_path = r"processed_data.csv"
 team = "LAL"  # Example team abbreviation
 date = "2024-11-01"  # Example date
 window = 10  # Example number of games to fetch
