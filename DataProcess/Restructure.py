@@ -33,7 +33,7 @@ for filename in os.listdir(folder_path):
         team_cols = ['PTS', 'FG', 'FGA', 'FG%', '3P', '3PA', '3P%', 'FT', 'FTA', 'FT%', 
                      'ORB', 'DRB', 'TRB', 'AST', 'STL', 'BLK', 'TOV', 'PF', 'TS%', 'EFG%', 
                      '3PAR', 'FTR', 'ORB%', 'DRB%', 'TRB%', 'AST%', 'STL%', 'BLK%', 'TOV%', 
-                     'USG%', 'ORTG', 'DRTG']
+                     'ORTG', 'DRTG']
 
         for col in team_cols:
             data[f'Team_{col}'] = data.apply(lambda row: row[f'HOME_{col}'] if row['Is_Home'] else row[f'VISITOR_{col}'], axis=1)

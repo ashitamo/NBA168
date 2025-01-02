@@ -149,6 +149,38 @@ s_to_id = {
     'MIN': 21, 'POR': 22, 'SEA': 23, 'UTA': 24, 'GSW': 25, 'LAC': 26, 'LAL': 27,
     'PHX': 28, 'SAC': 29, 'BKN': 30, 'OKC': 31
 }
+s_to_id = {
+    "ATL": 0,
+    "BKN": 1,
+    "BOS": 2,
+    "CHA": 3,
+    "CHI": 4,
+    "CLE": 5,
+    "DAL": 6,
+    "DEN": 7,
+    "DET": 8,
+    "GSW": 9,
+    "HOU": 10,
+    "IND": 11,
+    "LAC": 12,
+    "LAL": 13,
+    "MEM": 14,
+    "MIA": 15,
+    "MIL": 16,
+    "MIN": 17,
+    "NOP": 18,
+    "NYK": 19,
+    "OKC": 20,
+    "ORL": 21,
+    "PHI": 22,
+    "PHX": 23,
+    "POR": 24,
+    "SAC": 25,
+    "SAS": 26,
+    "TOR": 27,
+    "UTA": 28,
+    "WAS": 29,
+}
 # a = '''波士頓塞爾蒂克	BOS	Boston Celtics
 # 新澤西籃網\tNJ	New Jersey Nets
 # 紐約尼克\tNY	New York Knicks
@@ -180,13 +212,10 @@ s_to_id = {
 # 鳳凰城太陽	PHO	Phoenix Suns
 # 沙加緬度國王	SAC	Sacramento Kings'''
 
-# for i in a.split('\n'):
-#     temp = i.split('\t')
-#     for j in range(3):
-#         temp[j] = '\'' + temp[j] +'\''
-#     if len(temp)==4:
-#         del temp[3]
-#     print(temp[1] + ' : ' + temp[0] + ',')
-# for i in ch_to_s.keys():
-#     print('\'' + ch_to_s[i] +'\' : '+'\''+ i + '\',')
-# print(ch_to_s['洛杉磯湖人'])
+import os 
+
+if __name__ == "__main__":
+    folder_path = "teams_data"
+    for idx,filename in enumerate(os.listdir(folder_path)):
+        if filename.endswith(".csv"):
+            print('"{}": {},'.format(filename[:-4],idx))

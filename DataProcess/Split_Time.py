@@ -9,7 +9,7 @@ os.makedirs(train_folder, exist_ok=True)  # 如果資料夾不存在，則建立
 os.makedirs(val_folder, exist_ok=True)    # 如果資料夾不存在，則建立
 
 # 2024 年 11 月的篩選條件
-cutoff_date = pd.Timestamp("2024-10-1")
+cutoff_date = pd.Timestamp("2023-10-1")
 
 # 遍歷資料夾中的每個文件
 for file_name in os.listdir(data_folder):
